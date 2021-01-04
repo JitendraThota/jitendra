@@ -1,1 +1,2 @@
-<h1> this is docker file</h1>
+FROM httpd
+COPY . /usr/local/apache2/htdocs/
