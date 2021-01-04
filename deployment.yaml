@@ -1,0 +1,21 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind:Deployment
+metadata:
+  name: jitendra-deployment
+  nameSpace: jitendra
+spec:
+  selector:
+    matchLabels:
+      app: jitendra
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: jitendra
+    spec:
+      containers:
+      - name: jitendra
+        image: 349948765351.dkr.ecr.ap-south-1.amazonaws.com/jitendra:latest
+        ports:
+        - containerPort: 80
+
